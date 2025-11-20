@@ -1,1 +1,132 @@
+/* BASIC RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+body {
+    background-color: #f4f4f4;
+    overflow: hidden; /* Prevents scrolling on the main body */
+    height: 100vh;
+    width: 100vw;
+}
+
+/* VIEW MANAGEMENT */
+.view {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    z-index: -1;
+}
+
+.active {
+    display: flex;
+    opacity: 1;
+    z-index: 1;
+}
+
+/* --- MENU VIEW STYLES --- */
+#menu-view {
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.school-logo {
+    max-height: 150px; /* Limits logo height so it doesn't take over */
+    max-width: 90%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 40px; /* Space between buttons */
+    width: 80%;
+    max-width: 800px;
+}
+
+.btn {
+    flex: 1;
+    padding: 40px 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Green Button for Sign In */
+.sign-in {
+    background-color: #2ecc71;
+    color: white;
+}
+
+/* Red/Orange Button for Sign Out */
+.sign-out {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* --- FORM VIEW STYLES --- */
+.top-bar {
+    height: 60px;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.back-btn {
+    background: none;
+    border: 1px solid #fff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.back-btn:hover {
+    background: white;
+    color: #333;
+}
+
+iframe {
+    flex: 1; /* Takes up remaining height */
+    width: 100%;
+    border: none;
+}
